@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 def extract_xpath_from_url(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
-    return soup.select_one(".path-to-node").get("xpath")
+    return soup.select_one(".path-to-node").name
 
 
 def replace_coordinates_with_url(coordinates, url):
